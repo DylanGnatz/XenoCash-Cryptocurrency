@@ -1,0 +1,337 @@
+{
+	"info": {
+		"_postman_id": "94dcaae0-91ff-45f6-8d75-93005aec4120",
+		"name": "XenoBase",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add_Transaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5001/add_transaction?buy_ID=1&sell_ID=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"add_transaction"
+					],
+					"query": [
+						{
+							"key": "buy_ID",
+							"value": "1"
+						},
+						{
+							"key": "sell_ID",
+							"value": "1"
+						}
+					]
+				},
+				"description": "Adds a transaction to the database and blockchain"
+			},
+			"response": []
+		},
+		{
+			"name": "Connect_Port5001",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nodes\": [\"http://127.0.0.1:5002\"]\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5001/connect_node",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"connect_node"
+					]
+				},
+				"description": "Connect 3 nodes to the blockchain"
+			},
+			"response": []
+		},
+		{
+			"name": "Connect_Port5002",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nodes\": [\"http://127.0.0.1:5001\"]\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5002/connect_node",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5002",
+					"path": [
+						"connect_node"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mine_Block_Port5001",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5001/mine_block",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"mine_block"
+					]
+				},
+				"description": "Mine a block on the XenoCash chain."
+			},
+			"response": []
+		},
+		{
+			"name": "Mine_Block_Port5002",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5002/mine_block",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5002",
+					"path": [
+						"mine_block"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Replace_Chain_Port5002",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5002/replace_chain",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5002",
+					"path": [
+						"replace_chain"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get_Avg_Price",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5001/get_price",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"get_price"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get_Unmined_Blocks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5001/get_unmined",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"get_unmined"
+					]
+				},
+				"description": "Get a list of unmined transactions"
+			},
+			"response": []
+		},
+		{
+			"name": "Count_Buyers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5001/count_buyers",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"count_buyers"
+					]
+				},
+				"description": "Returns a list of users, ordered by the number of buy order transactions they have initiated"
+			},
+			"response": []
+		},
+		{
+			"name": "Get_Sell_Orders_by_Price",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5001/get_sell_order_price?max_price=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"get_sell_order_price"
+					],
+					"query": [
+						{
+							"key": "max_price",
+							"value": "1"
+						}
+					]
+				},
+				"description": "Gets all sell order under a max price"
+			},
+			"response": []
+		},
+		{
+			"name": "Get_Users_by_CityID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5001/get_users_by_city_ID?cityID=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"get_users_by_city_ID"
+					],
+					"query": [
+						{
+							"key": "cityID",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
